@@ -15,29 +15,31 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-returnUrl: string;
-hide=true;
+  returnUrl: string;
+  hide = true;
 
   constructor(private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-private router: Router,private MatIconRegistry: MatIconRegistry,
-private userService: UserService) { }
+    private router: Router,
+    private userService: UserService) { }
 
-  ngOnInit(){this.loginForm = this.formBuilder.group({
-    emailId: ['', Validators.required ],
+  ngOnInit() {
+  this.loginForm = this.formBuilder.group({
+    emailId: ['', Validators.required],
     password: ['', Validators.required]
-});
+  });
 
-}
-get f() { return this.loginForm.controls; }
+  }
+  get f() { return this.loginForm.controls; }
 
-onSubmit(user) {
-  this.submitted = true;
+  onSubmit(user) {
+    this.submitted = true;
 
-  // stop here if form is invalid
-  if (this.loginForm.invalid) {
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
       console.log("invalid")
+    }
+    console.log(user);
+    this.userService.login(user);
+  }
 }
-console.log(user);
-this.userService.login(user);
-}}

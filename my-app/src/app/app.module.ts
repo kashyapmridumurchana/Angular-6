@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import {AppMaterialModule} from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration/registration.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { RegistrationComponent } from './registration/registration.component';
     AppComponent,
     LoginComponent,
     RegistrationComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

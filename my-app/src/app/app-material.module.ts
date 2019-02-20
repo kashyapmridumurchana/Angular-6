@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import{ MatButtonModule,MatRippleModule,MatSelectModule,MatInputModule } from '@angular/material';
+import{ MatButtonModule,MatRippleModule,MatSelectModule,MatInputModule, MatToolbarModule, MatMenuModule } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule} from'@angular/material/card';
@@ -24,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatMenuModule
   ],
   exports:[
     MatFormFieldModule,
@@ -36,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatCardModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatMenuModule
 
   ]
 })
