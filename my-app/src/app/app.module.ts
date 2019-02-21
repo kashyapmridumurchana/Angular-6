@@ -8,6 +8,8 @@ import {AppMaterialModule} from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
+import { MatCardModule, MatSidenavContainer, MatSidenavModule } from '@angular/material';
+import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
 
 
 @NgModule({
@@ -16,12 +18,16 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
+    NotesearchbodyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
