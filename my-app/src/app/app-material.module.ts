@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import{ MatButtonModule,MatRippleModule,MatSelectModule,MatInputModule, MatToolbarModule, MatMenuModule,MatSidenavModule, MatListModule, MatDividerModule, MatTooltipModule, MatNativeDateModule
+import{ MatButtonModule,MatRippleModule,MatSelectModule,MatInputModule, MatToolbarModule, MatMenuModule,MatSidenavModule, MatListModule, MatDividerModule, MatTooltipModule, MatNativeDateModule, MatExpansionModule
  } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
    MatListModule,
    MatDividerModule,
    MatTooltipModule,
-   MatNativeDateModule
+   MatNativeDateModule,
+   MatExpansionModule
+   
    
     
  
@@ -56,8 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
    MatListModule,
    MatDividerModule,
    MatTooltipModule,
-   MatNativeDateModule
-    
+   MatNativeDateModule,
+   MatExpansionModule
   ]
 })
 export class AppMaterialModule { }
