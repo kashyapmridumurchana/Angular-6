@@ -8,7 +8,7 @@ import {AppMaterialModule} from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
-import { MatCardModule, MatSidenavContainer, MatSidenavModule } from '@angular/material';
+import { MatCardModule,MatExpansionModule } from '@angular/material';
 import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
 
 
@@ -25,7 +25,9 @@ import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.compone
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
+
     
   
   ],

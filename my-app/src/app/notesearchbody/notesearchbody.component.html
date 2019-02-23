@@ -1,37 +1,74 @@
 <div fxLayout="column" fxLayoutAlign="space-evenly center">
-      <mat-toolbar class="fixed-header" fxFlex="80%;" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%">  
- 
-      <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                 Take a note..
-                </mat-panel-title>
-                <mat-panel-description>
-                  
-                     <button (click)="textValue=''" style="float: right;"  mat-icon-button matTooltip="new list"> 
-                           <mat-icon>check_box</mat-icon>
-                           </button>
-                           <button (click)="logText(textbox.value)" style="float: right;" mat-icon-button matTooltip="new note with image">
-                                 <mat-icon>image</mat-icon>
-                              </button>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-            </mat-expansion-panel>
-         </mat-accordion>
-         
-   
-         
-   
- 
-      
-        
-         </mat-toolbar>
-     </div>
-      
-      
-      
-   
 
-  
-  
+  &nbsp;
+  &nbsp;
+  <mat-toolbar>
+
+    <mat-accordion fxFlex="80%;" fxFlex.xs="100%" fxFlex.sm="10%" fxFlex.md="100%">
+      <mat-expansion-panel (opened)="showHeader = false" (closed)="showHeader = true" style="width: 700px">
+        <mat-expansion-panel-header>
+          <ng-container *ngIf="showHeader;else tempTtext">
+            <mat-panel-title>
+              <h5>Take a note..</h5>
+
+              <div style="text-align:right; width:100%;">
+                <button mat-icon-button matTooltip="new list">
+                  <mat-icon>check_box</mat-icon>
+                </button>
+
+
+
+                <button mat-icon-button matTooltip="new note with image">
+                  <mat-icon>image</mat-icon>
+                </button>
+              </div>
+
+
+            </mat-panel-title>
+          </ng-container>
+          <ng-template #tempTtext>
+
+          </ng-template>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+
+          
+           
+         
+            <input class="noBorderAndBackground" placeholder="Title" style="width: 500px;">&nbsp;
+          
+        </mat-panel-description>
+        <mat-panel-description>
+            <input class="noBorderAndBackground" placeholder="Take a note.." style="width:500px; ">
+        </mat-panel-description>
+        <mat-panel-description>
+          <div class="container">
+            <div class="buttons">
+              <button  *ngFor="let button of buttons" mat-icon-button matTooltip={{button.tooltip}}>
+                <mat-icon>{{button.name}}</mat-icon>
+              </button>
+            </div>
+            <div class="close-button">
+              <button  mat-icon-button matTooltip="close">
+                Close
+              </button>
+            </div>
+          </div>
+        </mat-panel-description>
+
+
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+
+
+
+
+
+
+
+  </mat-toolbar>
+</div>

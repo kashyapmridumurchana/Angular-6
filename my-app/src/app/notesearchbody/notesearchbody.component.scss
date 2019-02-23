@@ -1,0 +1,41 @@
+body {text-align:center; padding:80px}
+input {
+  min-width:100px!important;
+  max-width:99.99%!important;
+  transition: width 0.25s;
+  text-align:center;
+}
+
+.mat-toolbar {
+  
+  padding: 100px;}
+
+  .noBorderAndBackground{
+   
+   text-align: left;
+   height:80px;
+   font-size:14pt;
+    background-color:white;
+    border-style:none;
+    border-color: white;
+
+  }
+  
+
+  :host {
+    .container {
+      display: flex;
+      width: 100%;
+    justify-content: space-between;
+
+      .buttons {
+    display: flex;
+   
+      }
+      .close-button {
+        
+        
+
+      }
+    }
+  }
