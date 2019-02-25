@@ -11,31 +11,20 @@ export class UserService {
   constructor(private httpUtil: HttpService,private router:Router ) { }
 
   login(user) {
-    this.httpUtil.postService(environment.base_url + 'login', user).subscribe(response => {
-      console.log(response);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-      if (response.status == 200) {
-        console.log("login successfull");
-        localStorage.setItem('Authorization', response.headers.get('token'));
-        this.router.navigate(['/home']);
-        console.log("haii");
-      }
-      else {
-        console.log("cannot login");
-      }
-    });
+    return this.httpUtil.postService(environment.base_url + 'login', user);
   }
 
   register(user) {
-    this.httpUtil.postService(environment.base_url+'register', user).subscribe(response => {
-      console.log(response);
-      if (response.status == 200) {
-        console.log(response.body.header);
+   return this.httpUtil.postService(environment.base_url+'register', user);
+  }
 
-        localStorage.setItem('Authorization', response.body.headers);
-      }
-      else {
-        console.log(response.body.headers);
-      }
-    })
+  forgotpassword(user)
+  {
+    return this.httpUtil.postService(environment.base_url+'forgotpassword',user);
+  }
+
+  resetpassword(user,id)
+  {
+    return this.httpUtil.putService(environment.base_url+'resetpassword/'+id,user,id);
   }
 }

@@ -10,3 +10,19 @@ button {
   button:hover {
   opacity: 0.5;
   }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .example-container > * {
+    width: 15%;
+  }
+  
+  .register-card{
+    height: 800px;
+    width: 450px;
+    margin: 5% auto;
+  }
+  

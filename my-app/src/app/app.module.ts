@@ -10,6 +10,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule,MatExpansionModule } from '@angular/material';
 import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.compone
     RegistrationComponent,
     HomeComponent,
     NotesearchbodyComponent,
+    ForgotpasswordComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,

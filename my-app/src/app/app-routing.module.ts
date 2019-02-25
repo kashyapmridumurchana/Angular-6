@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 const appRoutes: Routes = [
  
@@ -17,6 +19,8 @@ const appRoutes: Routes = [
   ]
 
 },
+{path: 'resetpassword/:id',component:ResetpasswordComponent},
+{path: 'forgotpassword',component:ForgotpasswordComponent},
   { path: '**', redirectTo: 'login' , pathMatch: 'full'}
  ];
   @NgModule({

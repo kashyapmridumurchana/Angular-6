@@ -34,9 +34,19 @@ export class RegistrationComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+console.log(user);
+    this.userService.register(user).subscribe(response => {
+      console.log(response);
+      if (response.status == 200) {
+        console.log(response.body.header);
 
-    this.userService.register(user);
-    console.log(user)
+        localStorage.setItem('Authorization', response.body.headers);
+      }
+      else {
+        console.log(response.body.headers);
+      }
+    })
+   
 
   }
 }
