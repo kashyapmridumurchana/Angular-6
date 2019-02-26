@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { MainnoteComponent } from './mainnote/mainnote.component';
 
 const appRoutes: Routes = [
  
@@ -14,8 +15,8 @@ const appRoutes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'home', component:HomeComponent ,
   children: [
-    { path: '', redirectTo: 'notesearchbody', pathMatch: 'full' },
-    { path: 'notesearchbody', component: NotesearchbodyComponent },
+    { path: '', redirectTo: 'mainnote', pathMatch: 'full' },
+    { path: 'mainnote', component: MainnoteComponent }
   ]
 
 },

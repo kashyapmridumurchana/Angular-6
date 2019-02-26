@@ -1,0 +1,8 @@
+<app-notesearchbody></app-notesearchbody>
+ <mat-card>
+    <ul>
+      <li *ngFor="let notes of notes">
+        {{notes.title}}, {{notes.description}}
+      </li>
+    </ul>
+  </mat-card>

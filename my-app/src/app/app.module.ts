@@ -12,6 +12,7 @@ import { MatCardModule,MatExpansionModule } from '@angular/material';
 import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { MainnoteComponent } from './mainnote/mainnote.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     NotesearchbodyComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
+    MainnoteComponent,
   ],
   imports: [
     BrowserModule,

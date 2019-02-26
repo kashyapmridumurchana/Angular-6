@@ -1,12 +1,13 @@
 <div fxLayout="row" fxLayoutAlign="center center">
        
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+   
         <div fxLayout="column" fxLayoutAlign="center center">
              
-            <mat-card class="register-card" fxFlex="0 1 100px">
+            <mat-card class="register-card" fxFlex="0 1 80px" style="width: 60x; height:60px;">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
                 <div>
                     <mat-card-header fxLayout="row" fxLayoutAlign="center center" style="margin : auto 21%;">
-                        <img src="./assets/image/keep-512.png" style="height:200px; width: 200px">
+                        <img src="./assets/image/keep-512.png" style="height:150px; width: 150px">
                     </mat-card-header>
                 </div>
                 <div>
@@ -19,14 +20,14 @@
                             </mat-form-field>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="center center">
-                            <mat-form-field class="example-container" appearance="outline" style="padding-top: 40px;">
+                            <mat-form-field class="example-container" appearance="outline">
                                 <mat-label for="emailId">EmailID</mat-label>
                                 <input matInput formControlName="emailId" placeholder="EmailID" autocomplete="off">
                                 <mat-error *ngIf="f.emailId.errors">{{'Enter Email ID'}}</mat-error>
                             </mat-form-field>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="center center">
-                            <mat-form-field class="example-container" appearance="outline" style="padding-top: 20px;">
+                            <mat-form-field class="example-container" appearance="outline" >
                                 <mat-label for="password">Password</mat-label>
                                 <input [type]="showPassword?'text':'password'" matInput formControlName="password"
                                     placeholder="Password" autocomplete="new-password">
@@ -34,7 +35,7 @@
                             </mat-form-field>
                         </div>
                         <div fxLayout="row" fxLayoutAlign="center center">
-                            <mat-form-field class="example-container" appearance="outline" style="padding-top: 40px;">
+                            <mat-form-field class="example-container" appearance="outline" >
                                 <mat-label for="mobileNumber">Phone Number</mat-label>
                                 <input matInput formControlName="mobileNumber" placeholder="phonenumber"
                                     autocomplete="off">
@@ -58,7 +59,8 @@
                         </div>
                     </mat-card-footer>
                 </div>
+            </form>
             </mat-card>
         </div>
-    </form>
+   
 </div>

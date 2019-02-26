@@ -25,7 +25,7 @@ export class ResetpasswordComponent implements OnInit {
     ngOnInit() {
       this.resetpasswordForm = this.formBuilder.group({
         password: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]{3,20}$")]],
-        // password2: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]$")]]
+       password2: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9]{3,20}$")]]
   
       });
     }
@@ -38,12 +38,12 @@ export class ResetpasswordComponent implements OnInit {
       if (this.resetpasswordForm.invalid) {
         return;
       }
-      // if(this.resetpasswordForm.value.password != this.resetpasswordForm.value.password2){
-      //   this.snackBar.open("Not same", "Error", {
-      //     duration: 3000,
-      //   });
-      //   return;
-      // }
+      if(this.resetpasswordForm.value.password != this.resetpasswordForm.value.password2){
+        this.snackBar.open("Not same", "Error", {
+          duration: 3000,
+        });
+        return;
+      }
       this.userService.resetpassword(user, this.id).subscribe(response => {
         console.log("Password has been reset");
         this.snackBar.open("Password has been reset", "OK", {
