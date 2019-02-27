@@ -1,13 +1,13 @@
-<div fxLayout="column" fxLayoutAlign="space-evenly center">
-
+<div fxLayout="coloumn" fxLayoutAlign="space-evenly center">
+    <form [formGroup]="createNoteForm">
   &nbsp;
   &nbsp;
   &nbsp;
   <mat-toolbar>
 
-    <mat-accordion  fxFlex="80%;" fxFlex.xs="100%" fxFlex.sm="10%" fxFlex.md="100%">
-      <mat-expansion-panel [expanded]="true" (opened)="showHeader = false" (closed)="showHeader = true" style="width: 600px">
-        <mat-expansion-panel-header>
+    <mat-accordion  >
+      <mat-expansion-panel hideToggle="true" [expanded]="true"  (opened)="showHeader = false" (closed)="onSubmit(createNoteForm.value)" (closed)="showHeader = true"  style="width: 600px">
+        <mat-expansion-panel-header >
           <ng-container *ngIf="showHeader;else tempTtext">
             <mat-panel-title>
               <h5>Take a note..</h5>
@@ -32,13 +32,15 @@
           </ng-template>
         </mat-expansion-panel-header>
         <mat-panel-description>
-            <input class="noBorderAndBackground" placeholder="Title" style="width: 500px;">&nbsp;
+            <input class="noBorderAndBackground" placeholder="Title"  formControlName="title" 
+            [ngClass]="{ 'is-invalid': submitted && f.title.errors }" style="width: 500px;">&nbsp;
             <button mat-icon-button matTooltip="pin">
                 <mat-icon>colorize</mat-icon>
               </button>
         </mat-panel-description>
         <mat-panel-description>
-            <textarea class="noBorderAndBackground" placeholder="Take a note.." style="width:500px; "></textarea>
+            <textarea class="noBorderAndBackground" placeholder="Take a note.." formControlName="description"
+            [ngClass]="{ 'is-invalid': submitted && f.description.errors }" style="width:500px; "></textarea>
         </mat-panel-description>
         <mat-panel-description>
           <div class="container">
@@ -62,4 +64,5 @@
     </mat-accordion>
 
   </mat-toolbar>
+  </form>
 </div>

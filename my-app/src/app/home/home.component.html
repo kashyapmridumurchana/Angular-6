@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign=" stretch">
-    <mat-slide-toggle >tap..</mat-slide-toggle>
+    
   
     <mat-toolbar class="fixed-header" fxFlex="100%;" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%">
    
@@ -75,7 +75,7 @@
         <!-- Search form -->
         <div class="slinput" ng-init="">
             <i class="fa fa-search left-icon"></i> 
-            <input type="search" placeholder="Search here" ng-model="searchInputVal"/> 
+            <input  type="search" placeholder="Search here" ng-model="searchInputVal"/> 
             <i ng-class="{'fa' : true, 'fa-close' : true, 'right-icon' : true, active : (searchInputVal.length > 0)}" ng-click="searchInputVal = ''"></i>
         </div>
   
@@ -126,7 +126,7 @@
             <mat-icon>apps</mat-icon>
           </button>
           <mat-menu #App="matMenu">
-              <mat-grid-list cols="3" rowHeight="150:180">
+              <mat-grid-list cols="3" >
                   <mat-grid-tile>
 
                       <button mat-button [matMenuTriggerFor]="user" matTooltip="Google account">

@@ -9,6 +9,8 @@ import { Note } from '../core/model/note/note';
 })
 export class MainnoteComponent implements OnInit {
 
+  
+
   public mytoken = localStorage.getItem('token')
   public notes: Note[] = [];
   constructor(private noteService: NoteService) { }
@@ -24,4 +26,7 @@ export class MainnoteComponent implements OnInit {
     }
     )
   }
+
+
+
 }

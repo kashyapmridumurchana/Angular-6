@@ -29,6 +29,10 @@ export class HttpService {
   deleteServiceWithParams(url,params){
     return this.http.delete(url,params);
   }
+
+ postServiceForNoteCreate(url,header,object){
+  return this.http.post<any>(url,object,header);
+}
 }
 
 

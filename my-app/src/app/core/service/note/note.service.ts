@@ -23,4 +23,15 @@ export class NoteService {
     };
     return this.httpUtil.getService(environment.note_url + 'retrievenote',httpheaders);
   }
+
+  createNote(note): Observable<any> {
+    var token = localStorage.getItem('token');
+    var httpheaders = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'token': token
+      })
+    };
+    return this.httpUtil.postServiceForNoteCreate(environment.note_url + 'createnote', httpheaders, note);
+  }
 }

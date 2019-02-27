@@ -11,7 +11,7 @@ input {
   padding: 100px;}
 
   .noBorderAndBackground{
-   
+   display: flex;
    text-align: left;
    height:50px;
    font-size:14pt;
@@ -35,10 +35,10 @@ input {
     display: flex;
    
       }
-      .close-button {
+      
         
         
 
-      }
+      
     }
   }

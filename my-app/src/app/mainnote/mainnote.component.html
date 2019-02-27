@@ -1,8 +1,51 @@
-<app-notesearchbody></app-notesearchbody>
- <mat-card>
-    <ul>
-      <li *ngFor="let notes of notes">
-        {{notes.title}}, {{notes.description}}
-      </li>
-    </ul>
-  </mat-card>
+<div class="container" fxLayout="column" fxLayoutGap="5%" fxLayoutAlign="center center"></div>
+
+    <div fxFlex="40%">
+      <app-notesearchbody></app-notesearchbody>
+    </div>
+
+
+    
+     
+    <div class="move" *ngFor="let note of notes">
+      <mat-card  (click)=openDialog(note) style="width: 570px;" >
+       
+         
+        <mat-card-header>
+          <mat-card-title>
+            {{note.title}}
+          </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          {{note.description}}
+        </mat-card-content>
+        <div>
+          <button mat-icon-button matTooltip="Remind me">
+            <mat-icon>add_alert</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Collaborator">
+            <mat-icon>person_add</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Change color">
+            <mat-icon>palette</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="Add image">
+            <mat-icon>image</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="more">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="undo">
+            <mat-icon>undo</mat-icon>
+          </button>
+          <button mat-icon-button matTooltip="redo">
+            <mat-icon>redo</mat-icon>
+          </button>
+        </div>
+    
+     
+      </mat-card>
+   
+    </div>
+ 
