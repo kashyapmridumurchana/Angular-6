@@ -15,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'home', component:HomeComponent ,
   children: [
+    
     { path: '', redirectTo: 'mainnote', pathMatch: 'full' },
     { path: 'mainnote', component: MainnoteComponent }
   ]

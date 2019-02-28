@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign=" stretch">
     
-  
+  <mat-slide-toggle (click)=hideButton()></mat-slide-toggle>
     <mat-toolbar class="fixed-header" fxFlex="100%;" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%">
    
 
@@ -8,14 +8,14 @@
 
 
       <mat-toolbar-row> 
-       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" matTooltip="Menu">
+       <button  *ngIf="!abc"  aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" matTooltip="Menu">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button> 
 
 
 
   
-        <button  mat-icon-button [matMenuTriggerFor]="menu">
+        <button *ngIf=abc  mat-icon-button [matMenuTriggerFor]="menu">
             <mat-icon>arrow_drop_down</mat-icon>
           </button>
          
@@ -253,9 +253,9 @@
   <mat-divider></mat-divider>
 
 <!--side navigation bar -->
- <mat-sidenav-container class="example-container">
-  <mat-sidenav #drawer mode="side" opened role="navigation">
-    <mat-nav-list>
+ <mat-sidenav-container  class="example-container">
+  <mat-sidenav  #drawer mode="side" opened role="navigation">
+    <mat-nav-list *ngIf=!def>
       
       <button mat-menu-item   >
         <mat-icon>notes</mat-icon>

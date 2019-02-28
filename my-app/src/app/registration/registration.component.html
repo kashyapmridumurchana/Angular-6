@@ -1,17 +1,14 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-       
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+    <mat-card >  
    
         <div fxLayout="column" fxLayoutAlign="center center">
              
-            <mat-card class="register-card" fxFlex="0 1 80px" style="width: 60x; height:60px;">
                 <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+               <div align="center">
+                        <img src="./assets/image/registration.png" style="height:150px; width: 150px">
+                    </div>
                 <div>
-                    <mat-card-header fxLayout="row" fxLayoutAlign="center center" style="margin : auto 21%;">
-                        <img src="./assets/image/keep-512.png" style="height:150px; width: 150px">
-                    </mat-card-header>
-                </div>
-                <div>
-                    <mat-card-content>
                         <div fxLayout="row" fxLayoutAlign="center center">
                             <mat-form-field class="example-container" appearance="outline" style="padding-top: 40px;">
                                 <mat-label for="name">Name</mat-label>
@@ -42,10 +39,8 @@
                                 <mat-error *ngIf="f.mobileNumber.errors">{{'Enter Phone Number'}}</mat-error>
                             </mat-form-field>
                         </div>
-                    </mat-card-content>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="center center" style="margin : auto 40%;">
-                    <mat-card-footer style="padding-top: 40px">
                         <div class="button-row">
                             <button type="submit" mat-raised-button color="primary">
                                 <p class="register-btn-text">Sign Up</p>
@@ -57,10 +52,9 @@
                                 <a [routerLink]="['/login']" class="btn btn-link">Login</a>
                             </div>
                         </div>
-                    </mat-card-footer>
                 </div>
             </form>
-            </mat-card>
+       
         </div>
-   
+    </mat-card> 
 </div>

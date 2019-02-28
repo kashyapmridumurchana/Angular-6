@@ -3,8 +3,9 @@
   &nbsp;
   &nbsp;
   &nbsp;
-  <mat-toolbar>
+  
 
+  <mat-toolbar>
     <mat-accordion  >
       <mat-expansion-panel hideToggle="true" [expanded]="true"  (opened)="showHeader = false" (closed)="onSubmit(createNoteForm.value)" (closed)="showHeader = true"  style="width: 600px">
         <mat-expansion-panel-header >
@@ -16,7 +17,7 @@
                 <button mat-icon-button matTooltip="new list">
                   <mat-icon>check_box</mat-icon>
                 </button>
-
+                
 
 
                 <button mat-icon-button matTooltip="new note with image">
@@ -48,6 +49,8 @@
               <button  *ngFor="let button of buttons" mat-icon-button matTooltip={{button.tooltip}}>
                 <mat-icon>{{button.name}}</mat-icon>
               </button>
+              
+              
             </div>
             <div class="close-button">
               <button  mat-icon-button matTooltip="close">

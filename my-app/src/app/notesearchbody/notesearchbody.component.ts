@@ -77,7 +77,7 @@ export class NotesearchbodyComponent implements OnInit {
     console.log(this.mytoken);
     console.log(note);
     this.noteService.createNote(note).subscribe(response => {
-      this.snackBar.open("sucess", "note created", {
+      this.snackBar.open("success", "note created", {
         duration: 2000
       });
     })

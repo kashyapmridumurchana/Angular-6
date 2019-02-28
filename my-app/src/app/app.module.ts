@@ -13,7 +13,9 @@ import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.compone
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { MainnoteComponent } from './mainnote/mainnote.component';
-import { UpdatenoteComponent } from './updatenote/updatenote.component';
+import { UpdateNoteComponent } from './update-note/update-note.component';
+import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { UpdatenoteComponent } from './updatenote/updatenote.component';
     ForgotpasswordComponent,
     ResetpasswordComponent,
     MainnoteComponent,
-    UpdatenoteComponent,
+    UpdateNoteComponent,
+    ArchiveNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { UpdatenoteComponent } from './updatenote/updatenote.component';
     
   
   ],
+  entryComponents: [UpdateNoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

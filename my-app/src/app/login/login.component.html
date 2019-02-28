@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center"></div>
+<div  fxLayoutAlign="center center"></div>
   <mat-card class="login-card" fxFlex="0 1 100px">
     <img src="./assets/image/keep-512.png" style="width: 200px;height:200px;">
     <h2>Login</h2>
@@ -6,7 +6,7 @@
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label for="emailId">Email ID</mat-label>
-          <input matInput placeholder="Enter the Email ID" formControlName="emailId" class="form-control">
+          <input style="width: 450%;" matInput placeholder="Enter the Email ID" formControlName="emailId" class="form-control">
 
           <mat-error *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
             <mat-error *ngIf="f.emailId.errors.required">EmailId is required</mat-error>

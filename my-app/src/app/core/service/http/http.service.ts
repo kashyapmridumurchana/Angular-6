@@ -33,6 +33,14 @@ export class HttpService {
  postServiceForNoteCreate(url,header,object){
   return this.http.post<any>(url,object,header);
 }
+putServiceForNoteUpdate(url,object,header){
+  return this.http.put<any>(url,object,header);
+}
+
+deleteServiceForNoteDelete(url,header){
+  return this.http.delete<any>(url,header);
+}
+
 }
 
 

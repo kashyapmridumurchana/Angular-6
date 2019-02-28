@@ -34,4 +34,30 @@ export class NoteService {
     };
     return this.httpUtil.postServiceForNoteCreate(environment.note_url + 'createnote', httpheaders, note);
   }
+  updateNote(note)
+  {
+    var token = localStorage.getItem('token');
+    var httpheaders = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'token': token
+      })
+    };
+    return this.httpUtil.putServiceForNoteUpdate(environment.note_url + 'updatenote',note,httpheaders);
+  }
+
+  deleteNote(noteId)
+  {
+    var token = localStorage.getItem('token');
+    var httpheaders = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'token': token
+      })
+    };
+    return this.httpUtil.deleteServiceForNoteDelete(environment.note_url + 'deletenote/'+noteId,httpheaders);
+}
+
+
+
 }

@@ -21,8 +21,10 @@ button {
   }
   
   .login-card{
-    height: 800px;
+    background-color:wheat;
+ padding-left: 20%;
+    height: 600px;
     width: 450px;
-    margin: 5% auto;
+    margin: auto;
   }
   

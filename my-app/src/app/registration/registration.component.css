@@ -16,10 +16,11 @@
     
   }
   
-  .register-card{
-    height: 800px;
+  .mat-card{
+    background-color: wheat;
+    height: 50%;
     width: 450px;
-    margin: 5% auto;
+    margin: auto;
   }
   
   
@@ -39,4 +40,6 @@
   .card {
   margin: auto;
   }
-	
+
+
+ 
