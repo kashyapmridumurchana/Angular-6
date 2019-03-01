@@ -8,6 +8,8 @@ import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.compone
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { MainnoteComponent } from './mainnote/mainnote.component';
+import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
+import { TrashedNotesComponent } from './trashed-notes/trashed-notes.component';
 
 const appRoutes: Routes = [
  
@@ -17,6 +19,8 @@ const appRoutes: Routes = [
   children: [
     
     { path: '', redirectTo: 'mainnote', pathMatch: 'full' },
+    { path: 'archivenote', component:ArchiveNotesComponent},
+    { path: 'trashednote', component:TrashedNotesComponent},
     { path: 'mainnote', component: MainnoteComponent }
   ]
 

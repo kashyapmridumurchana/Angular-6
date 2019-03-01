@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,20 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  abc=false;
-  def=false;
-  constructor() { }
+  abc = false;
+  def = false;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+
   }
 
-  hideButton()
+  hideButton() {
+
+    this.abc = !(this.abc);
+
+    this.def = (this.abc);
+  }
+
+  navigateNotes()
   {
+    this.router.navigate(['home/mainnote']);
+  }
 
-this.abc=!(this.abc);
-
-this.def=(this.abc);
-}
-
-
+  navigateArchive()
+  {
+    this.router.navigate(['home/archivenote']);
+  }
+  navigateTrash()
+  {
+    this.router.navigate(['home/trashednote']);
+  }
 }

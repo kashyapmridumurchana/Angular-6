@@ -15,6 +15,8 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { MainnoteComponent } from './mainnote/mainnote.component';
 import { UpdateNoteComponent } from './update-note/update-note.component';
 import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
+import { TrashedNotesComponent } from './trashed-notes/trashed-notes.component';
+
 
 
 
@@ -29,7 +31,9 @@ import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
     ResetpasswordComponent,
     MainnoteComponent,
     UpdateNoteComponent,
-    ArchiveNotesComponent
+    ArchiveNotesComponent,
+    TrashedNotesComponent,
+    
   ],
   imports: [
     BrowserModule,
