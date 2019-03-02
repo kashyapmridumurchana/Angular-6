@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Note } from '../core/model/note/note';
 import { NoteService } from '../core/service/note/note.service';
 import { MatDialog, MatSnackBar } from '@angular/material';
-import { Note } from '../core/model/note/note';
 
 @Component({
-  selector: 'app-trashed-notes',
-  templateUrl: './trashed-notes.component.html',
-  styleUrls: ['./trashed-notes.component.css']
+  selector: 'app-pinned-note',
+  templateUrl: './pinned-note.component.html',
+  styleUrls: ['./pinned-note.component.css']
 })
-export class TrashedNotesComponent implements OnInit {
- 
+export class PinnedNoteComponent implements OnInit {
+
   public mytoken = '';
   public notes: Note[] = [];
-
 
   constructor(private noteService: NoteService, private dialog: MatDialog, private snackBar: MatSnackBar ) { }
   
 
   ngOnInit() {
-this.mytoken=localStorage.getItem('token');
+    this.mytoken=localStorage.getItem('token');
     this.getNotes();
   }
 
@@ -29,9 +28,8 @@ this.mytoken=localStorage.getItem('token');
     }
     )
   }
-
   openDialog(note): void {
-    const dialogRef = this.dialog.open(TrashedNotesComponent, {
+    const dialogRef = this.dialog.open(PinnedNoteComponent, {
       width: '550px',
       data: note
     });
@@ -44,8 +42,6 @@ this.mytoken=localStorage.getItem('token');
       console.log('The dialog was closed');
     });
   }
-
-
   sendToArchive(note) {
     var newNote = {
     
@@ -58,28 +54,19 @@ this.mytoken=localStorage.getItem('token');
       });
     })
   }
-  deleteNoteForever(note) {
-    console.log(note.noteId);
-    this.noteService.deleteNote(note.noteId).subscribe(response => {
-      this.snackBar.open("deleted Note forever", "OK", { duration: 2000 });
-    }), error => {
-      this.snackBar.open("error", "error to retrieve notes", { duration: 2000 });
-    }
-  }
+  
 
-
-  restore(note)
+  deleteNote(note)
   {
-    var newNote = {
-      ...note,
-      "inTrash": false,
-     
+     var newNote = {
+       ...note,
+      inTrash: true,
     }
-    console.log(newNote);
     this.noteService.updateNote(newNote).subscribe(response => {
-      this.snackBar.open(" Restored ", "OK", {
+      this.snackBar.open("Sent to Trash ", "OK", {
         duration: 3000,
       });
     })
   }
-  }
+
+}

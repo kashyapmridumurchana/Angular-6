@@ -83,6 +83,20 @@ export class NotesearchbodyComponent implements OnInit {
     })
   }
 
+  moveToPin(note)
+  {
+    var newNote = {
+    
+      ...note,
+      "archive": true
+    }
+    this.noteService.updateNote(newNote).subscribe(response => {
+      this.snackBar.open("Sent to Archive ", "OK", {
+        duration: 3000,
+      });
+    })
+
+  }
   }
 
 

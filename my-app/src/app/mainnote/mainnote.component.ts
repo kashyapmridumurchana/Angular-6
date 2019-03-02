@@ -14,11 +14,12 @@ export class MainnoteComponent implements OnInit {
 
 
 
-  public mytoken = localStorage.getItem('token')
+  public mytoken = '';
   public notes: Note[] = [];
   constructor(private noteService: NoteService, private dialog: MatDialog, private snackBar: MatSnackBar ) { }
 
   ngOnInit() {
+    this.mytoken = localStorage.getItem('token');
     this.getNotes();
   }
 
@@ -49,12 +50,8 @@ export class MainnoteComponent implements OnInit {
   deleteNote(note)
   {
      var newNote = {
-      "description": note.description,
-      "inTrash": true,
-      "noteId": note.noteId,
-      "pinned": note.pinned,
-      "title": note.title,
-      "archive": note.archive
+       ...note,
+      inTrash: true,
     }
     this.noteService.updateNote(newNote).subscribe(response => {
       this.snackBar.open("Sent to Trash ", "OK", {
@@ -69,11 +66,7 @@ export class MainnoteComponent implements OnInit {
   sendToArchive(note) {
     var newNote = {
     
-      "description": note.description,
-      "inTrash": note.inTrash,
-      "noteId": note.noteId,
-      "pinned": note.pinned,
-      "title": note.title,
+      ...note,
       "archive": true
     }
     this.noteService.updateNote(newNote).subscribe(response => {
@@ -82,4 +75,19 @@ export class MainnoteComponent implements OnInit {
       });
     })
   }
+  moveToPin(note)
+  {
+    var newNote = {
+    
+      ...note,
+      "pinned": true
+    }
+    this.noteService.updateNote(newNote).subscribe(response => {
+      this.snackBar.open("Pinned", "OK", {
+        duration: 3000,
+      });
+    })
+
+  }
+
 }

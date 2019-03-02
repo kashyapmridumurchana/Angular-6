@@ -4,19 +4,28 @@
       <app-notesearchbody></app-notesearchbody>
     </div>
 
+    <div fxFlex="40%">
+      <app-pinned-note></app-pinned-note>
+    </div>
+
 
     
      
     <div class="move" *ngFor="let note of notes">
-      <mat-card   style="width: 570px;" *ngIf="!note.archive && !note.inTrash" >
+      <mat-card style="background-color: wheat"  style="width: 570px;" *ngIf="!note.archive && !note.inTrash &&!note.pinned" >
        
-         
+      
         <mat-card-header>
           <mat-card-title (click)=openDialog(note)>
             {{note.title}}
+           
           </mat-card-title>
+          <button  mat-icon-button (click)=moveToPin(note) matTooltip="pin">
+            <mat-icon>colorize</mat-icon>
+          </button>
         </mat-card-header>
-
+        
+     
         <mat-card-content (click)=openDialog(note)>
           {{note.description}}
         </mat-card-content>

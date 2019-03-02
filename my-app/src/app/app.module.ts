@@ -16,6 +16,8 @@ import { MainnoteComponent } from './mainnote/mainnote.component';
 import { UpdateNoteComponent } from './update-note/update-note.component';
 import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
 import { TrashedNotesComponent } from './trashed-notes/trashed-notes.component';
+import { PinnedNoteComponent } from './pinned-note/pinned-note.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 
@@ -33,6 +35,8 @@ import { TrashedNotesComponent } from './trashed-notes/trashed-notes.component';
     UpdateNoteComponent,
     ArchiveNotesComponent,
     TrashedNotesComponent,
+    PinnedNoteComponent,
+    SideNavComponent,
     
   ],
   imports: [
