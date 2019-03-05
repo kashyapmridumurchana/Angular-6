@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   navigateNotes()
   {
-    this.router.navigate(['home/mainnote']);
+    this.router.navigate(['home/viewnotes']);
   }
 
   navigateArchive()

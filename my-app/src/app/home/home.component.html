@@ -1,6 +1,5 @@
 <div fxLayout="row" fxLayoutAlign=" stretch">
     
-  <mat-slide-toggle (click)=hideButton()></mat-slide-toggle>
     <mat-toolbar class="fixed-header" fxFlex="100%;" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%">
    
 
@@ -79,6 +78,7 @@
             <i ng-class="{'fa' : true, 'fa-close' : true, 'right-icon' : true, active : (searchInputVal.length > 0)}" ng-click="searchInputVal = ''"></i>
         </div>
   
+        <mat-slide-toggle (click)=hideButton()></mat-slide-toggle>
 
 
         <a mat-button routerLink="/home" routerLinkActive="active" matTooltip="Refresh">

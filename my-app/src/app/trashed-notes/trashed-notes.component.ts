@@ -56,8 +56,15 @@ this.mytoken=localStorage.getItem('token');
       this.snackBar.open("Sent to Archive ", "OK", {
         duration: 3000,
       });
-    })
+      this.getNotes();
+    },
+      (error) => {
+        console.log('Error while archiving note::->', error);
+      })
   }
+
+
+
   deleteNoteForever(note) {
     console.log(note.noteId);
     this.noteService.deleteNote(note.noteId).subscribe(response => {
@@ -72,7 +79,7 @@ this.mytoken=localStorage.getItem('token');
   {
     var newNote = {
       ...note,
-      "inTrash": false,
+      inTrash: false,
      
     }
     console.log(newNote);
@@ -80,6 +87,10 @@ this.mytoken=localStorage.getItem('token');
       this.snackBar.open(" Restored ", "OK", {
         duration: 3000,
       });
-    })
+      this.getNotes();
+    },
+      (error) => {
+        console.log('Error while restoring note::->', error);
+      })
   }
   }

@@ -56,19 +56,20 @@ export class ArchiveNotesComponent implements OnInit {
   unArchive(note)
   {
     var newNote = {
+      ...note,
       "archive": false,
-      "description": note.description,
-      "inTrash": note.inTrash,
-      "noteId": note.noteId,
-      "pinned": note.pinned,
-      "title": note.title
+      
     }
     console.log(newNote);
     this.noteService.updateNote(newNote).subscribe(response => {
       this.snackBar.open(" unArchive ", "OK", {
         duration: 3000,
       });
-    })
+      this.getNotes();
+    },
+      (error) => {
+        console.log('Error while unarchiving note::->', error);
+      })
   }
   
 

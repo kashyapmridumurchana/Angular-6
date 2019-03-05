@@ -4,12 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
-import { NotesearchbodyComponent } from './notesearchbody/notesearchbody.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { MainnoteComponent } from './mainnote/mainnote.component';
 import { ArchiveNotesComponent } from './archive-notes/archive-notes.component';
 import { TrashedNotesComponent } from './trashed-notes/trashed-notes.component';
+import { ViewNoteComponent } from './view-note/view-note.component';
 
 const appRoutes: Routes = [
  
@@ -18,10 +17,10 @@ const appRoutes: Routes = [
   { path: 'home', component:HomeComponent ,
   children: [
     
-    { path: '', redirectTo: 'mainnote', pathMatch: 'full' },
+    { path: '', redirectTo: 'viewnotes', pathMatch: 'full' },
     { path: 'archivenote', component:ArchiveNotesComponent},
     { path: 'trashednote', component:TrashedNotesComponent},
-    { path: 'mainnote', component: MainnoteComponent }
+    { path: 'viewnotes', component: ViewNoteComponent }
   ]
 
 },

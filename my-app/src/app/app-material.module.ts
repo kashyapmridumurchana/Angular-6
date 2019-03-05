@@ -14,6 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [],
   imports: [
+   
    MatIconModule,
     BrowserAnimationsModule,
     CommonModule,

@@ -25,7 +25,6 @@ export class UpdateNoteComponent implements OnInit {
       });
     })
     this.dialogRef.close();
-    
   }
 }
 
